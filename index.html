@@ -6,6 +6,9 @@
 initial-scale=1.0">
 <title>Mi Currículum Vitae</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<style>#mapa-espol{height:360px}</style>
 </head>
 <body>
 <header>
@@ -24,28 +27,112 @@ initial-scale=1.0">
 <main>
 <section id="resumen">
     <h2>Resumen</h2>
-    <p>Breve descripción de tus habilidades y experiencia.</p>
+    <p>Estudiante de Ingeniería de Software en ESPOL con interés en desarrollo de aplicaciones web/móviles y gestión de proyectos. He liderado y trabajado en equipos para construir soluciones full-stack: compilador propio en Python para análisis sintáctico de Ruby; aplicaciones de escritorio en Java; backend RESTful en PHP y servidor en Node.js para una plataforma de denuncias ambientales con frontend en React + TailwindCSS; y bases de datos MySQL. Utilizo Git & GitHub para control de versiones y colaboración y Figma para el diseño de interfaces. Me caracterizan la puntualidad, compromiso, responsabilidad, trabajo en equipo, resiliencia y capacidad de liderar.</p>
 </section>
 <section id="experiencia">
     <h2>Experiencia</h2>
+    <p>Como estudiante de <strong>Ingeniería de Software en ESPOL</strong>, he participado en diversos proyectos académicos donde he aplicado
+    mis conocimientos en <strong>Java</strong> y <strong>Python</strong>, además del desarrollo <strong>full-stack</strong> con tecnologías como
+    <strong>React</strong>, <strong>Node.js</strong>, <strong>PHP</strong> y <strong>MySQL</strong>.  
+    Me caracterizo por la <strong>puntualidad</strong>, el <strong>compromiso</strong>, la <strong>responsabilidad</strong> y la
+    <strong>capacidad de liderazgo</strong>, además de mantener una actitud resiliente y enfocada en el trabajo en equipo.</p>
+    <p>Ademas he realizado algunos proyectos academicos: <a href="#proyectos"> Proyectos.</a> </p>
 </section>
 <section id="educacion">
     <h2>Educación</h2>
+    <ul>
+        <li>
+            <strong>ESPOL-Escuela Superior Politecnica del Litoral</strong><br>
+           <small>Ingeniería de Software (6to semestre)</small> 
+        </li><br>
+        <li>
+            <strong>Certificaciones relevantes</strong><br>
+            <small>Introducción al Desarrollo Web · Control de Versiones con Git y GitHub · Fundamentos de Bases de Datos (MySQL)</small>
+        </li>
+        </ul>
+        <h3>Ubicación de la universidad</h3>
+        <div id="mapa-espol" role="application" aria-label="Mapa de ESPOL con marcador"></div>
+        <script>
+        // Coordenadas aproximadas de ESPOL (Campus Gustavo Galindo)
+        const espol = [-2.1450, -79.9649];
+        const map = L.map('mapa-espol', {scrollWheelZoom: false}).setView(espol, 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker(espol).addTo(map)
+        .bindPopup('<strong>ESPOL</strong><br>Campus Gustavo Galindo')
+        .openPopup();
+        </script>
 </section>
 <section id="habilidades">
     <h2>Habilidades</h2>
+    <h3>Habilidades técnicas</h3>
+    <ul class="lista">
+        <li><span class="pill">Python</span> — desarrollo de compiladores y automatización</li>
+        <li><span class="pill">Java (JavaFX / Swing)</span> — desarrollo de aplicaciones de escritorio</li>
+        <li><span class="pill">React + TailwindCSS</span> — interfaces dinámicas y responsive</li>
+        <li><span class="pill">Node.js + PHP</span> — lógica de negocio y API REST</li>
+        <li><span class="pill">MySQL</span> — diseño y gestión de bases de datos</li>
+        <li><span class="pill">Git & GitHub</span> — control de versiones y colaboración</li>
+        <li><span class="pill">Figma</span> — diseño UI/UX y prototipado</li>
+    </ul>
+    <h3>Habilidades Blandas</h3>
+    <ul class="list">
+        <li><span class="pill">Puntualidad</span> — entregas a tiempo y cumplimiento de plazos</li>
+        <li><span class="pill">Compromiso</span> — enfoque en la calidad y resultados</li>
+        <li><span class="pill">Responsabilidad</span> — gestión eficiente de tareas</li>
+        <li><span class="pill">Trabajo en equipo</span> — comunicación y colaboración</li>
+        <li><span class="pill">Resiliencia</span> — adaptación a cambios y resolución de problemas</li>
+        <li><span class="pill">Liderazgo</span> — coordinación de equipos y toma de decisiones</li>
+    </ul>
+
 </section>
 <section id="proyectos">
     <h2>Proyectos</h2>
+
+    <ul class="list">
+        <li><h3><strong>Ecoalerta</strong></h3></li>
+        <p>EcoAlerta es una plataforma web que permite a los ciudadanos reportar y visualizar denuncias ambientales en tiempo real, fomentando la participación comunitaria y la protección del entorno natural.</p>
+        <div class = "img-cont">
+            <div class = "img-stacker">
+                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img1_Proyecto1.jpg" alt = "img1">
+                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img2_Proyecto1.jpg" alt = "img2">
+                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/img3.jpg" alt = "img3">
+            </div>
+        </div>
+    </ul>
+    
+</section>
+
+<section>
+    <h2>Contacto</h2>
+    <form action = "mailto:fasanza@espol.edu.ec" method="post" enctype="text/plain">
+        <label for = "c-nombre">Nombre completo</label>
+        <input id="c-nombre" name="name" type="text" placeholder="Tu nombre" required>
+        <label for="c-email">Correo</label>
+        <input id="c-email" name="email" type="email" placeholder="tunombre@dominio.com" required>
+
+        <label for="c-motivo">Motivo</label>
+        <select id="c-motivo" name="motivo" required>
+            <option value="">Selecciona..</option>
+            <option>Oferta de prácticas</option>
+            <option>Consulta</option>
+        </select>
+        
+    <label for="c-mensaje">Mensaje</label>
+    <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Cuéntame sobre la oportunidad…" required></textarea>
+    <button type="submit" aria-label="Enviar Formulario">Enviar</button>
+    </form><br>
+    <h3>Contactame por otros medios:</h3>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/freddy-ricardo-asanza-romero-589656313/">LinkedIn</a></li>
+        <li><a href="https://github.com/Ricardo24A">GitHub</a></li>
+    </ul>
 </section>
 </main>
 <footer>
-    <p>© Tu Nombre - 2023</p>
-        <ul>
-        <li><a
-        href="https://www.linkedin.com/in/tunombre">LinkedIn</a></li>
-        <li><a href="https://github.com/tunombre">GitHub</a></li>
-</ul>
+    <p>© Ricardo Asanza Romero - 2025</p>
 </footer>
 </body>
 </html>
