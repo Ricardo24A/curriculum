@@ -139,7 +139,7 @@ section form button:hover{filter:brightness(1.05)}
 
 .hero{
   display:grid;
-  grid-template-columns: 1fr auto;               /* izq: nombre/foto | der: meta */
+  grid-template-columns: 1fr auto;              
   grid-template-areas:
     "name   meta"
     "photo  meta";
@@ -152,10 +152,9 @@ section form button:hover{filter:brightness(1.05)}
 .hero__meta{ grid-area:meta; margin:0; text-align:right }
 .hero__photo{
   grid-area:photo;
-  justify-self:start;                             /* queda bajo el nombre */
-  width:140px; height:140px;
+  justify-self:start;                            
   object-fit:cover; object-position:center;
-  border-radius:12px;                             /* cuadrada con esquinas suaves */
+  border-radius:12px;                             
   border:2px solid var(--border, #e5e7eb);
   box-shadow: var(--shadow, 0 8px 24px rgba(15,23,42,.12));
   background:#fff;
