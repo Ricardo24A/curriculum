@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,
 initial-scale=1.0">
 <title>Mi Currículum Vitae</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <style>#mapa-espol{height:360px}</style>
@@ -14,6 +14,12 @@ initial-scale=1.0">
 <header>
     <h1>Freddy Ricardo Asanza Romero</h1>
     <p>Estudiante | fasanza@espol.edu.ec | 0963151382</p>
+    <img
+    class="hero__photo"
+    src="img/fotoPerfil.jpg"
+    alt="Foto profesional de Freddy Ricardo Asanza Romero"
+    width="140" height="140" loading="lazy">
+
 </header>
 <nav>
     <ul>
@@ -65,10 +71,14 @@ initial-scale=1.0">
         .openPopup();
         </script>
 </section>
+
 <section id="habilidades">
-    <h2>Habilidades</h2>
-    <h3>Habilidades técnicas</h3>
-    <ul class="lista">
+  <h2>Habilidades</h2>
+
+  <div class="habilidad_cont">
+    <div class="habilidad_colum">
+      <h3>Habilidades técnicas</h3>
+      <ul class="lista">
         <li><span class="pill">Python</span> — desarrollo de compiladores y automatización</li>
         <li><span class="pill">Java (JavaFX / Swing)</span> — desarrollo de aplicaciones de escritorio</li>
         <li><span class="pill">React + TailwindCSS</span> — interfaces dinámicas y responsive</li>
@@ -76,18 +86,23 @@ initial-scale=1.0">
         <li><span class="pill">MySQL</span> — diseño y gestión de bases de datos</li>
         <li><span class="pill">Git & GitHub</span> — control de versiones y colaboración</li>
         <li><span class="pill">Figma</span> — diseño UI/UX y prototipado</li>
-    </ul>
-    <h3>Habilidades Blandas</h3>
-    <ul class="list">
+      </ul>
+    </div>
+
+    <div class="habilidad_colum">
+      <h3>Habilidades blandas</h3>
+      <ul class="list">
         <li><span class="pill">Puntualidad</span> — entregas a tiempo y cumplimiento de plazos</li>
         <li><span class="pill">Compromiso</span> — enfoque en la calidad y resultados</li>
         <li><span class="pill">Responsabilidad</span> — gestión eficiente de tareas</li>
         <li><span class="pill">Trabajo en equipo</span> — comunicación y colaboración</li>
         <li><span class="pill">Resiliencia</span> — adaptación a cambios y resolución de problemas</li>
         <li><span class="pill">Liderazgo</span> — coordinación de equipos y toma de decisiones</li>
-    </ul>
-
+      </ul>
+    </div>
+  </div>
 </section>
+
 <section id="proyectos">
     <h2>Proyectos</h2>
 
@@ -96,9 +111,15 @@ initial-scale=1.0">
         <p>EcoAlerta es una plataforma web que permite a los ciudadanos reportar y visualizar denuncias ambientales en tiempo real, fomentando la participación comunitaria y la protección del entorno natural.</p>
         <div class = "img-cont">
             <div class = "img-stacker">
-                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img1_Proyecto1.jpg" alt = "img1">
-                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img2_Proyecto1.jpg" alt = "img2">
-                <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/img3.jpg" alt = "img3">
+                <figure class="imgs">
+                    <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img1_Proyecto1.jpg" alt = "img1">
+                </figure>    
+                <figure class="imgs">
+                    <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/Img2_Proyecto1.jpg" alt = "img2">
+                 </figure>   
+                 <figure class="imgs">
+                    <img src = "https://raw.githubusercontent.com/Ricardo24A/Ricardo24A/refs/heads/main/imagenes/img3.jpg" alt = "img3">
+                 </figure>
             </div>
         </div>
     </ul>
